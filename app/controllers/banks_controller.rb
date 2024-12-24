@@ -5,9 +5,18 @@ class BanksController < ApplicationController
   end
 
   def new
+    @bank = Bank.new
   end
 
   def create
+    @bank = Bank.new(bank_params)
+    @bank.account_id = current_user.account.id
+
+    if @bank.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
