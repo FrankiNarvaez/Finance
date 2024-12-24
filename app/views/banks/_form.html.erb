@@ -1,0 +1,19 @@
+<%= form_with model: @bank do |f| %>
+  <% @bank.errors.full_messages.each do |error| %>
+    <div>
+      <%= error %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :balance %>
+    <%= f.number_field :balance %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
