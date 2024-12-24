@@ -28,4 +28,8 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  banks:
+    create:
+      created: "Your bank %{name} was created"
+    new: 
+      title: "Create a bank"

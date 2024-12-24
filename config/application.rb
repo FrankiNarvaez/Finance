@@ -23,5 +23,11 @@ module Finance
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # avaiable languages
+    config.i18n.avaiable_locales = %i[ en es ]
+
+  # language by default
+  config.i18n.default_locale = :en
   end
 end

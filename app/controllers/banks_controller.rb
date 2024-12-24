@@ -13,7 +13,7 @@ class BanksController < ApplicationController
     @bank.account_id = current_user.account.id
 
     if @bank.save
-      redirect_to root_path
+      redirect_to root_path, notice: t(".created", name: @bank.name)
     else
       render :new, status: :unprocessable_entity
     end
