@@ -34,4 +34,5 @@ en:
     new: 
       title: "Create a bank"
   shared:
-    title: "Finance"
+    header:
+      title: "Finance"
