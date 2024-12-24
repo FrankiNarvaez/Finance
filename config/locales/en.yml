@@ -33,3 +33,5 @@ en:
       created: "Your bank %{name} was created"
     new: 
       title: "Create a bank"
+  shared:
+    title: "Finance"
