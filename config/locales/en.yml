@@ -40,6 +40,14 @@ en:
     form:
       edit: "Update"
       delete: "Delete"
+  categories:
+    form:
+      edit: "Update"
+      delete: "Delete"
+    new:
+      title: "Create a new category"
+    create:
+      created: "Your category %{name} was created"
   shared:
     header:
       title: "Finance"

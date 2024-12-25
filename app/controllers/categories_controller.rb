@@ -6,9 +6,18 @@ class CategoriesController < ApplicationController
   end
 
   def new
+    @category = Category.new
   end
 
   def create
+    @category = Category.new(category_params)
+    @category.account_id = current_user.account.id
+
+    if @category.save
+      redirect_to root_path, notice: t(".created", name: @category.name)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
