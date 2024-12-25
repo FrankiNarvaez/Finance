@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  before_action :set_transaction, only: %i[ edit update destroy ]
   def index
     @transactions = Transaction.account(current_user.account.id)
   end
@@ -22,6 +23,11 @@ class TransactionsController < ApplicationController
   end
 
   def update
+    if @transaction.update(transaction_params)
+      redirect_to root_path, notice: t(".updated")
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy

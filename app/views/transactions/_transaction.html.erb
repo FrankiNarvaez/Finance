@@ -1,5 +1,5 @@
-<section>
+<%= link_to edit_transaction_path(transaction.id) do %>
   <%= transaction.name %>
   <%= transaction.description %>
   <%= transaction.amount %>
-</section>
+<% end %>
