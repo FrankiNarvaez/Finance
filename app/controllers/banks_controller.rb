@@ -2,6 +2,7 @@ class BanksController < ApplicationController
   before_action :set_bank, only: %i[ edit update destroy ]
 
   def index
+    @banks = Bank.all
   end
 
   def new
