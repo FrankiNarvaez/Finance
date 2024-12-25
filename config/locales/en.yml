@@ -33,6 +33,13 @@ en:
       created: "Your bank %{name} was created"
     new: 
       title: "Create a bank"
+    update:
+      updated: "Your bank %{name} was updated"
+    form:
+      edit: "Update"
+      delete: "Delete"
   shared:
     header:
       title: "Finance"
+  common:
+    confirmation: "Are you sure?"

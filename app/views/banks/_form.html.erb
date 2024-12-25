@@ -15,5 +15,8 @@
     <%= f.number_field :balance %>
   </div>
 
-  <%= f.submit %>
+  <div>
+    <%= f.submit t('.edit') %>
+    <%= link_to t('.delete'), data: { turbo_method: :delete, turbo_confirm: t('common.confirm') } if action_name == 'edit' %>
+  </div>
 <% end %>

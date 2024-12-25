@@ -24,6 +24,11 @@ class BanksController < ApplicationController
   end
 
   def update
+    if @bank.update(bank_params)
+      redirect_to root_path, notice: t(".updated", name: @bank.name)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
