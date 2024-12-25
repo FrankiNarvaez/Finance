@@ -25,7 +25,7 @@ module Finance
     # config.eager_load_paths << Rails.root.join("extras")
 
     # avaiable languages
-    config.i18n.avaiable_locales = %i[ en es ]
+    config.i18n.available_locales = %i[ en es ]
 
   # language by default
   config.i18n.default_locale = :en
