@@ -1,0 +1,17 @@
+<%= form_with model: @category do |f| %>
+  <% @category.errors.full_messages.each do |error| %>
+    <div>
+      <%= error %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.submit t('.edit') %>
+    <%= link_to t('.delete'), category_path(@category.id), data: { turbo_method: :delete, turbo_confirm: t('common.confirmation') } if action_name == 'edit' %>
+  </div>
+<% end %>
