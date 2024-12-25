@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_one :account, dependent: :destroy
 
   def create_account
-    Account.create(user_id: id)
+    Account.create(user_id: id) unless Account.find_by(user_id: id)
   end
 end
