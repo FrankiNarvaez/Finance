@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "accounts#index"
 
-  resources :banks
+  resources :banks, except: :show
+  resources :categories, except: :show
 end
