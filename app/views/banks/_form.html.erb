@@ -16,7 +16,7 @@
   </div>
 
   <div>
-    <%= f.submit t('.edit') %>
+    <%= f.submit %>
     <%= link_to t('.delete'), bank_path(@bank.id), data: { turbo_method: :delete, turbo_confirm: t('common.confirmation') } if action_name == 'edit' %>
   </div>
 <% end %>
