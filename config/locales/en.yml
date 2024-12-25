@@ -48,6 +48,8 @@ en:
       title: "Create a new category"
     create:
       created: "Your category %{name} was created"
+    update:
+      updated: "Your category %{name} was updated"
   shared:
     header:
       title: "Finance"
