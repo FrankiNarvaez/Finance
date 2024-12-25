@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ edit update destroy ]
 
   def index
-    @categories = Category.all
+    @categories = Category.account(current_user.account.id)
   end
 
   def new
