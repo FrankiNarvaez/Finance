@@ -1,0 +1,15 @@
+<main class="lg:mx-[10%] flex justify-between gap-3">
+  <section class="border-2 border-gray-300 rounded-xl p-3 w-1/5">
+    <h3><%= t('.categories') %></h3>
+    <%= render partial: "categories/category", collection: @categories %>
+  </section>
+
+  <section class="border-2 border-gray-300 rounded-xl p-3 w-3/5">
+    <%= render partial: "transactions/transaction", collection: @transactions %>
+  </section>
+
+  <section class="border-2 border-gray-300 rounded-xl p-3 w-1/5">
+    <h3><%= t('.banks') %></h3>
+    <%= render partial: "banks/bank", collection: @banks %>
+  </section>
+</main>

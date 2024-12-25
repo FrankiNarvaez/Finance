@@ -1,1 +1,4 @@
-<h2><%= t('.title') %></h2>
+<section class="lg:mx-[10%] h-20 flex items-center justify-between">
+  <h1><%= t('.title') %></h1>
+  <%= link_to t('.logout'), destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: t('common.confirmation') } %>
+</section>
