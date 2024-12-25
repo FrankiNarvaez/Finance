@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_25_004814) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_25_134140) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -38,6 +38,22 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_25_004814) do
     t.index ["account_id"], name: "index_categories_on_account_id"
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "type", null: false
+    t.integer "amount", null: false
+    t.text "description"
+    t.date "date", null: false
+    t.bigint "account_id", null: false
+    t.bigint "bank_id", null: false
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_transactions_on_account_id"
+    t.index ["bank_id"], name: "index_transactions_on_bank_id"
+    t.index ["category_id"], name: "index_transactions_on_category_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -53,4 +69,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_25_004814) do
   add_foreign_key "accounts", "users"
   add_foreign_key "banks", "accounts"
   add_foreign_key "categories", "accounts"
+  add_foreign_key "transactions", "accounts"
+  add_foreign_key "transactions", "banks"
+  add_foreign_key "transactions", "categories"
 end
