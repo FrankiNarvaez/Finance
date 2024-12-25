@@ -50,6 +50,8 @@ en:
       created: "Your category %{name} was created"
     update:
       updated: "Your category %{name} was updated"
+    destroy:
+      deleted: "Your category was deleted"
   shared:
     header:
       title: "Finance"

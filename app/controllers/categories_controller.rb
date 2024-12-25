@@ -32,6 +32,8 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
+    @category.destroy
+    redirect_to root_path, status: :see_other, notice: t(".deleted")
   end
 
   private
