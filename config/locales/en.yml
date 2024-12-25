@@ -35,6 +35,8 @@ en:
       title: "Create a bank"
     update:
       updated: "Your bank %{name} was updated"
+    destroy:
+      deleted: "Your bank was deleted"
     form:
       edit: "Update"
       delete: "Delete"

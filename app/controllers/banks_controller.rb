@@ -32,6 +32,8 @@ class BanksController < ApplicationController
   end
 
   def destroy
+    @bank.destroy
+    redirect_to root_path, notice: t(".deleted"), status: :see_other
   end
 
   private
@@ -41,6 +43,6 @@ class BanksController < ApplicationController
   end
 
   def set_bank
-    @bank = Bank.find(params[:id])
+    @bank ||= Bank.find(params[:id])
   end
 end
