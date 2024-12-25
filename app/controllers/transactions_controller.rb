@@ -31,6 +31,8 @@ class TransactionsController < ApplicationController
   end
 
   def destroy
+    @transaction.destroy
+    redirect_to root_path, status: :see_other, notice: t(".deleted")
   end
 
   private
