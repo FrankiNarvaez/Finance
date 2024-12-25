@@ -1,4 +1,7 @@
-<%= link_to edit_bank_path(bank.id), class: "bg-red-500 flex border-2 border-gray-300 m-3" do %>
-  <%= bank.name %>
-  <%= bank.balance %>
+<%= link_to edit_bank_path(bank.id), class: "flex flex-col m-3 rounded-md" do %>
+  <%= image_tag "placeholder.webp", class: "w-full h-24 rounded-t-md" %>
+  <div class="px-3">
+    <h4><%= bank.name %></h4>
+    <span><%= t('.balance')%>: <%= bank.balance %></span>
+  </div>
 <% end %>
