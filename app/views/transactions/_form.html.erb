@@ -1,0 +1,47 @@
+<%= form_with model: @transaction do |f| %>
+  <% @transaction.errors.full_messages.each do |error| %>
+    <div>
+      <%= error %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :amount %>
+    <%= f.number_field :amount, min: 0 %>
+  </div>
+
+  <div>
+    <%= f.label :transaction_type %>
+    <%= f.select :transaction_type, options_for_select([[t('.income'), 0], [t('.expense'), 1]]) %>
+  </div>
+
+  <div>
+    <%= f.label :date %>
+    <%= f.date_field :date, value: Date.today %>
+  </div>
+
+  <div>
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, Category.account(current_user.account.id), :id, :name, include_blank: true %>
+  </div>
+
+  <div>
+    <%= f.label :bank_id %>
+    <%= f.collection_select :bank_id, Bank.account(current_user.account.id), :id, :name, include_blank: true %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+    <%= link_to t('.delete'), transaction_path(@transaction.id), data: { turbo_method: :delete, turbo_confirm: t('common.confirmation') } if action_name == 'edit' %>
+  </div>
+<% end %>

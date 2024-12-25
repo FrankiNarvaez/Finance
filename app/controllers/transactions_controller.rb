@@ -3,9 +3,18 @@ class TransactionsController < ApplicationController
   end
 
   def new
+    @transaction = Transaction.new
   end
 
   def create
+    @transaction = Transaction.new(transaction_params)
+    @transaction.account_id = current_user.account.id
+
+    if @transaction.save
+      redirect_to root_path, notice: t(".created")
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -20,7 +29,7 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:name, :type, :amount, :description, :date, :bank, :category)
+    params.require(:transaction).permit(:name, :transaction_type, :amount, :description, :date, :bank_id, :category_id)
   end
 
   def set_transaction
