@@ -5,43 +5,43 @@
     </div>
   <% end %>
 
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="flex flex-col">
+    <%= f.label :name, class: "text-base text-gray-600" %>
+    <%= f.text_field :name, class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
   </div>
 
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="flex flex-col">
+    <%= f.label :description, class: "text-base text-gray-600" %>
+    <%= f.text_area :description, class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
   </div>
 
-  <div>
-    <%= f.label :amount %>
-    <%= f.number_field :amount, min: 0 %>
+  <div class="flex flex-col">
+    <%= f.label :amount, class: "text-base text-gray-600" %>
+    <%= f.number_field :amount, min: 0, class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
   </div>
 
-  <div>
-    <%= f.label :transaction_type %>
-    <%= f.select :transaction_type, options_for_select([[t('.income'), 0], [t('.expense'), 1]]) %>
+  <div class="flex flex-col">
+    <%= f.label :transaction_type, class: "text-base text-gray-600" %>
+    <%= f.select :transaction_type, options_for_select([[t('.income'), 0], [t('.expense'), 1]]), class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
   </div>
 
-  <div>
-    <%= f.label :date %>
-    <%= f.date_field :date, value: Date.today %>
+  <div class="flex flex-col">
+    <%= f.label :date, class: "text-base text-gray-600" %>
+    <%= f.date_field :date, value: Date.today, class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
   </div>
 
-  <div>
-    <%= f.label :category_id %>
-    <%= f.collection_select :category_id, Category.account(current_user.account.id), :id, :name, include_blank: true %>
+  <div class="flex flex-col">
+    <%= f.label :category_id, class: "text-base text-gray-600" %>
+    <%= f.collection_select :category_id, Category.account(current_user.account.id), :id, :name, include_blank: true, class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
   </div>
 
-  <div>
-    <%= f.label :bank_id %>
-    <%= f.collection_select :bank_id, Bank.account(current_user.account.id), :id, :name, include_blank: true %>
+  <div class="flex flex-col">
+    <%= f.label :bank_id, class: "text-base text-gray-600" %>
+    <%= f.collection_select :bank_id, Bank.account(current_user.account.id), :id, :name, include_blank: true, class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
   </div>
 
-  <div>
-    <%= f.submit %>
-    <%= link_to t('.delete'), transaction_path(@transaction.id), data: { turbo_method: :delete, turbo_confirm: t('common.confirmation') } if action_name == 'edit' %>
+  <div class="mt-4 w-full flex gap-3">
+    <%= f.submit class: "bg-main-color text-white rounded p-2 w-full" %>
+    <%= link_to t('.delete'), transaction_path(@transaction.id), data: { turbo_method: :delete, turbo_confirm: t('common.confirmation') }, class: "bg-main-color text-white rounded p-2 w-full text-center" if action_name == 'edit' %>
   </div>
 <% end %>
