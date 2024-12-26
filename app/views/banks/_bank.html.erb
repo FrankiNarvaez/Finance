@@ -1,4 +1,4 @@
-<%= link_to edit_bank_path(bank.id), class: "flex flex-col m-3 rounded-md" do %>
+<%= link_to edit_bank_path(bank.id), class: "flex flex-col m-3 rounded-md", data: { turbo_frame: "modal" } do %>
   <%= image_tag "placeholder.webp", class: "w-full h-24 rounded-t-md" %>
   <div class="px-3">
     <h4><%= bank.name %></h4>
