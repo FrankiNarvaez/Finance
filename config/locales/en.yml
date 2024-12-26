@@ -1,4 +1,15 @@
 en:
+  accounts:
+    index:
+      add_bank: "Add new bank"
+      banks: "Banks"
+      categories: "Categories"
+      add_category: "Add new category"
+      add_transaction: "Add new transaction"
+      transactions_today: "transactions of today"
+      transaction_name: "Name"
+      transaction_description: "Description"
+      transaction_amount: "Amount"
   banks:
     create:
       created: "Your bank %{name} was created"
@@ -11,6 +22,8 @@ en:
     form:
       edit: "Update"
       delete: "Delete"
+    bank:
+      balance: "Balance"
   categories:
     form:
       edit: "Update"

@@ -1,5 +1,7 @@
-<%= link_to edit_transaction_path(transaction.id) do %>
-  <%= transaction.name %>
-  <%= transaction.description %>
-  <%= transaction.amount %>
+<%= link_to edit_transaction_path(transaction.id), class: "flex gap-2" do %>
+  <tr class="border-b hover:bg-gray-50">
+    <td class="px-6 py-4 text-sm text-gray-900"><%= transaction.name %></td>
+    <td class="px-6 py-4 text-sm text-gray-500"><%= transaction.description %></td>
+    <td class="px-6 py-4 text-sm text-gray-500"><%= transaction.amount %></td>
+  </tr>
 <% end %>

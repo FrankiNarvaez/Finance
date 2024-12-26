@@ -2,14 +2,43 @@
   <section class="border-2 border-gray-300 rounded-xl p-3 w-1/5">
     <h3><%= t('.categories') %></h3>
     <%= render partial: "categories/category", collection: @categories %>
+    <%= link_to new_category_path do %>
+      <div class="bg-main-color text-white rounded flex justify-center py-2">
+        <p><%= t('.add_category') %></p>
+      </div>
+    <% end %>
   </section>
 
   <section class="border-2 border-gray-300 rounded-xl p-3 w-3/5">
-    <%= render partial: "transactions/transaction", collection: @transactions %>
+    <h3><%= t('.transactions_today') %></h3>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white shadow-md rounded-lg">
+        <thead class="bg-gray-50 border-b">
+          <tr>
+            <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_name') %></th>
+            <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_description')%></th>
+            <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_amount') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "transactions/transaction", collection: @transactions %>
+        </tbody>
+      </table>
+    </div>
+    <%= link_to new_transaction_path do %>
+      <div class="bg-main-color text-white rounded flex justify-center py-2">
+        <p><%= t('.add_transaction') %></p>
+      </div>
+    <% end %>
   </section>
 
   <section class="border-2 border-gray-300 rounded-xl p-3 w-1/5">
     <h3><%= t('.banks') %></h3>
     <%= render partial: "banks/bank", collection: @banks %>
+    <%= link_to new_bank_path do %>
+      <div class="bg-main-color text-white rounded flex justify-center py-2">
+        <p><%= t('.add_bank') %></p>
+      </div>
+    <% end %>
   </section>
 </main>
