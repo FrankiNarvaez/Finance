@@ -1,7 +1,17 @@
-<%= link_to edit_transaction_path(transaction.id), class: "flex gap-2" do %>
-  <tr class="border-b hover:bg-gray-50">
-    <td class="px-6 py-4 text-sm text-gray-900"><%= transaction.name %></td>
-    <td class="px-6 py-4 text-sm text-gray-500"><%= transaction.description %></td>
-    <td class="px-6 py-4 text-sm text-gray-500"><%= transaction.amount %></td>
-  </tr>
-<% end %>
+<tr class="border-b hover:bg-gray-50">
+  <td class="text-sm text-gray-900">
+    <%= link_to edit_transaction_path(transaction.id), class: "block w-full h-full px-6 py-4" do %>
+      <%= transaction.name %>
+    <% end %>
+  </td>
+  <td class="text-sm text-gray-500">
+    <%= link_to edit_transaction_path(transaction.id), class: "block w-full h-full px-6 py-4" do %>
+      <%= transaction.description %>
+    <% end %>
+  </td>
+  <td class="text-sm text-gray-500">
+    <%= link_to edit_transaction_path(transaction.id), class: "block w-full h-full px-6 py-4" do %>
+      <%= transaction.amount %>
+    <% end %>
+  </td>
+</tr>
