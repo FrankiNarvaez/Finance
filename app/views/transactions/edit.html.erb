@@ -1,5 +1,10 @@
-<section class="absolute bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 rounded-2xl shadow-md">
-  <h2><%= t('.title') %></h2>
+<%= turbo_frame_tag "modal" do %>
+  <div data-controller="modal">
+    <div data-action="click->modal#close" class="fixed z-10 w-full h-full top-0 left-0 bg-black bg-opacity-40"></div>
+    <section data-modal-target="float"  class="absolute z-20 bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 rounded-2xl shadow-md ease-in-out duration-300 scale-0">
+      <h2><%= t('.title') %></h2>
 
-  <%= render "form" %>
-</section>
+      <%= render "form" %>
+    </section>
+  </div> 
+<% end %>

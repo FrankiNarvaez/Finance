@@ -1,21 +1,21 @@
 <tr class="border-b hover:bg-gray-50">
   <td class="text-sm text-gray-900">
-    <%= link_to edit_transaction_path(transaction.id), class: "block w-full h-full px-6 py-4" do %>
+    <%= link_to edit_transaction_path(transaction.id), data: { turbo_frame: "modal" }, class: "block w-full h-full px-6 py-4" do %>
       <%= transaction.name %>
     <% end %>
   </td>
   <td class="text-sm text-gray-500">
-    <%= link_to edit_transaction_path(transaction.id), class: "block w-full h-full px-6 py-4" do %>
+    <%= link_to edit_transaction_path(transaction.id), data: { turbo_frame: "modal" }, class: "block w-full h-full px-6 py-4" do %>
       <%= transaction.description %>
     <% end %>
   </td>
   <td class="text-sm text-gray-500">
-    <%= link_to edit_transaction_path(transaction.id), class: "block w-full h-full px-6 py-4" do %>
+    <%= link_to edit_transaction_path(transaction.id), data: { turbo_frame: "modal" }, class: "block w-full h-full px-6 py-4" do %>
       <%= transaction.amount %>
     <% end %>
   </td>
   <td class="text-sm text-gray-500">
-    <%= link_to edit_transaction_path(transaction.id), class: "block w-full h-full px-6 py-4" do %>
+    <%= link_to edit_transaction_path(transaction.id), data: { turbo_frame: "modal" }, class: "block w-full h-full px-6 py-4" do %>
       <%= transaction.date %>
     <% end %>
   </td>
