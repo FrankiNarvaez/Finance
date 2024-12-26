@@ -1,3 +1,4 @@
-<%= link_to edit_category_path(category.id), data: { turbo_frame: "modal" } do %>
+<%= link_to edit_category_path(category.id), data: { turbo_frame: "modal" }, class: "flex gap-2" do %>
+  <%= image_tag category.icon, class: "w-7 h-7" if category.icon.attached? %>
   <%= category.name %>
 <% end %>

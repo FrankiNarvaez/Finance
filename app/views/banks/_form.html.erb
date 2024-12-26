@@ -16,6 +16,16 @@
   </div>
 
   <div>
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+  </div>
+
+  <div>
+    <%= f.label :icon %>
+    <%= f.file_field :icon %>
+  </div>
+
+  <div>
     <%= f.submit %>
     <%= link_to t('.delete'), bank_path(@bank.id), data: { turbo_method: :delete, turbo_confirm: t('common.confirmation') } if action_name == 'edit' %>
   </div>

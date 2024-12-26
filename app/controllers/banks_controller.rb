@@ -39,7 +39,7 @@ class BanksController < ApplicationController
   private
 
   def bank_params
-    params.require(:bank).permit(:name, :balance)
+    params.require(:bank).permit(:name, :balance, :picture, :icon)
   end
 
   def set_bank

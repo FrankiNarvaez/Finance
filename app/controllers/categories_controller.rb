@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ edit update destroy ]
 
   def index
-    @categories = Category.account(current_user.account.id)
+    @categories = Category.account(current_user.account)
   end
 
   def new
@@ -39,7 +39,7 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :icon)
   end
 
   def set_category
