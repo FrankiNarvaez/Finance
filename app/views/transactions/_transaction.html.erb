@@ -14,4 +14,9 @@
       <%= transaction.amount %>
     <% end %>
   </td>
+  <td class="text-sm text-gray-500">
+    <%= link_to edit_transaction_path(transaction.id), class: "block w-full h-full px-6 py-4" do %>
+      <%= transaction.date %>
+    <% end %>
+  </td>
 </tr>

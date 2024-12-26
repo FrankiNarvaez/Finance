@@ -10,6 +10,7 @@ en:
       transaction_name: "Name"
       transaction_description: "Description"
       transaction_amount: "Amount"
+      transaction_date: "Date"
   banks:
     create:
       created: "Your bank %{name} was created"
