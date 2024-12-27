@@ -5,18 +5,18 @@
     </div>
   <% end %>
 
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="flex flex-col">
+    <%= f.label :name, class: "text-base text-gray-600" %>
+    <%= f.text_field :name, class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
   </div>
 
-  <div>
-    <%= f.label :icon %>
-    <%= f.file_field :icon %>
+  <div class="flex flex-col">
+    <%= f.label :icon, class: "text-base text-gray-600" %>
+    <%= f.file_field :icon, class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
   </div>
 
-  <div>
-    <%= f.submit %>
-    <%= link_to t('.delete'), category_path(@category.id), data: { turbo_method: :delete, turbo_confirm: t('common.confirmation') } if action_name == 'edit' %>
+  <div class="mt-4 w-full flex gap-3">
+    <%= f.submit class: "bg-main-color text-white rounded p-2 w-full" %>
+    <%= link_to t('.delete'), category_path(@category.id), data: { turbo_method: :delete, turbo_confirm: t('common.confirmation') }, class: "bg-main-color text-white rounded p-2 w-full text-center" if action_name == 'edit' %>
   </div>
 <% end %>

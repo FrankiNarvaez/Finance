@@ -30,7 +30,9 @@ en:
       edit: "Update"
       delete: "Delete"
     new:
-      title: "Create a new category"
+      title: "Create category"
+    edit:
+      title: "Edit category"
     create:
       created: "Your category %{name} was created"
     update:
