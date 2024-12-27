@@ -75,3 +75,9 @@ en:
         have_account: "Already have an account?"
         sign_in: "Sign in here"
         sign_up: "Sign up"
+    passwords:
+      new:
+        title: "Forgot your password?"
+        send_instructions: "Send me reset password instructions"
+        remmember_password: "Remember your password?"
+        sign_in: "Sign in here"
