@@ -57,11 +57,20 @@ en:
     new:
       title: "Add transaction"
       close: "Close"
+    index:
+      transactions_today: "Transactions of today"
+      transaction_name: "Name"
+      transaction_description: "Description"
+      transaction_amount: "Amount"
+      transaction_date: "Date"
+      transaction_type: "Type"
+      all_transactions: "All transactions"
   shared:
     header:
       title: "Finance"
   common:
     confirmation: "Are you sure?"
+    back: "Back"
   users:
     sessions:
       new:

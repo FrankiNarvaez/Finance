@@ -1,1 +1,30 @@
-<%= render partial: "transaction", collection: @transactions %>
+<section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl w-3/4 mx-auto">
+  <div class="flex justify-between items-center mb-4">
+    <h3 class="text-xl font-semibold text-gray-800"><%= t('.all_transactions') %></h3>
+    <div class="flex gap-2">
+      <%= link_to t('common.back'), root_path, class: "py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 active:scale-95 transaction-all duration-300 text-center" %>
+      <%= link_to new_transaction_path, data: { turbo_frame: "modal" } do %>
+        <div class="bg-main-color text-white rounded-lg flex justify-center py-2 px-3 shadow-sm transaction-all duration-300 active:scale-95">
+          <%= image_tag "icons/plus.svg", class: "w-5 h-5" %>
+          <p><%= t('.add') %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white shadow-md rounded-lg">
+      <thead class="bg-gray-50 border-b">
+        <tr>
+          <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_name') %></th>
+          <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_description')%></th>
+          <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_amount') %></th>
+          <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_date') %></th>
+          <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_type') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "transactions/transaction", collection: @transactions %>
+      </tbody>
+    </table>
+  </div>
+</section>
