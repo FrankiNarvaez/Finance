@@ -16,6 +16,8 @@ en:
       created: "Your bank %{name} was created"
     new: 
       title: "Create a bank"
+    edit:
+      title: "Edit bank"
     update:
       updated: "Your bank %{name} was updated"
     destroy:
