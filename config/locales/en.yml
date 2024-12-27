@@ -1,12 +1,10 @@
 en:
   accounts:
     index:
-      add_bank: "Add new bank"
+      add: "Add"
       banks: "Banks"
       categories: "Categories"
-      add_category: "Add new category"
-      add_transaction: "Add new transaction"
-      transactions_today: "transactions of today"
+      transactions_today: "Transactions of today"
       transaction_name: "Name"
       transaction_description: "Description"
       transaction_amount: "Amount"

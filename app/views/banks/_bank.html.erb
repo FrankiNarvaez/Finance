@@ -1,10 +1,10 @@
-<%= link_to edit_bank_path(bank.id), class: "flex flex-col m-3 rounded-md", data: { turbo_frame: "modal" } do %>
+<%= link_to edit_bank_path(bank.id), class: "flex flex-col my-2 rounded-md", data: { turbo_frame: "modal" } do %>
   <%= image_tag bank.picture.attached? ? bank.picture : "placeholder.webp", class: "w-full h-24 rounded-t-md" %>
   <div>
     <div class="flex gap-2 my-1 items-center">
       <%= image_tag bank.icon, class: "w-7 h-7" if bank.icon.attached? %>
       <h4><%= bank.name %></h4>
     </div>
-    <span><%= t('.balance')%>: <%= bank.balance %></span>
+    <span><%= t('.balance')%>: $<%= bank.balance %></span>
   </div>
 <% end %>

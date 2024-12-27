@@ -1,16 +1,30 @@
 <main class="lg:mx-[10%] flex justify-between gap-3">
   <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl w-1/5">
-    <h3><%= t('.categories') %></h3>
+    <div class="flex justify-between items-center mb-2">
+      <h3 class="text-xl font-semibold text-gray-800"><%= t('.categories') %></h3>
+      <%= link_to new_category_path, data: { turbo_frame: "modal" } do %>
+        <div class="bg-main-color text-white rounded-lg flex justify-center py-1 px-2">
+          <%= image_tag "icons/plus.svg", class: "w-5 h-5" %>
+          <p><%= t('.add') %></p>
+        </div>
+      <% end %>
+    </div>
     <%= render partial: "categories/category", collection: @categories %>
-    <%= link_to new_category_path, data: { turbo_frame: "modal" } do %>
-      <div class="bg-main-color text-white rounded flex justify-center py-2">
-        <p><%= t('.add_category') %></p>
-      </div>
-    <% end %>
   </section>
 
   <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl w-3/5">
-    <h3><%= t('.transactions_today') %></h3>
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-xl font-semibold text-gray-800"><%= t('.transactions_today') %></h3>
+      <div class="flex gap-2">
+        <%= link_to t('.all_transactions'), transactions_path, class: "py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 text-center" %>
+        <%= link_to new_category_path, data: { turbo_frame: "modal" } do %>
+          <div class="bg-main-color text-white rounded-lg flex justify-center py-2 px-3">
+            <%= image_tag "icons/plus.svg", class: "w-5 h-5" %>
+            <p><%= t('.add') %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
     <div class="overflow-x-auto">
       <table class="min-w-full bg-white shadow-md rounded-lg">
         <thead class="bg-gray-50 border-b">
@@ -27,21 +41,19 @@
         </tbody>
       </table>
     </div>
-    <%= link_to new_transaction_path, data: { turbo_frame: "modal" } do %>
-      <div class="bg-main-color text-white rounded flex justify-center py-2">
-        <p><%= t('.add_transaction') %></p>
-      </div>
-    <% end %>
   </section>
 
   <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl w-1/5">
-    <h3><%= t('.banks') %></h3>
+    <div class="flex justify-between items-center">
+      <h3 class="text-xl font-semibold text-gray-800"><%= t('.banks') %></h3>
+      <%= link_to new_category_path, data: { turbo_frame: "modal" } do %>
+        <div class="bg-main-color text-white rounded-lg flex justify-center py-1 px-2">
+          <%= image_tag "icons/plus.svg", class: "w-5 h-5" %>
+          <p><%= t('.add') %></p>
+        </div>
+      <% end %>
+    </div>
     <%= render partial: "banks/bank", collection: @banks %>
-    <%= link_to new_bank_path, data: { turbo_frame: "modal" } do %>
-      <div class="bg-main-color text-white rounded flex justify-center py-2">
-        <p><%= t('.add_bank') %></p>
-      </div>
-    <% end %>
   </section>
 </main>
 <%= turbo_frame_tag "modal" %>
