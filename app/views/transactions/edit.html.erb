@@ -2,7 +2,12 @@
   <div data-controller="modal">
     <div data-action="click->modal#close" class="fixed z-10 w-full h-full top-0 left-0 bg-black bg-opacity-40"></div>
     <section data-modal-target="float"  class="absolute z-20 bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 rounded-2xl shadow-md ease-in-out duration-300 scale-0">
-      <h2 class="text-xl font-bold text-main-color"><%= t('.title') %></h2>
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-main-color"><%= t('.title') %></h2>
+        <div data-action="click->modal#close" class="flex gap-1 items-center cursor-pointer">
+          <%= image_tag "icons/close.svg", class: "w-6 h-6" %>
+        </div>
+      </div>
 
       <%= render "form" %>
     </section>
