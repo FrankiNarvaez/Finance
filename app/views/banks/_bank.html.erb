@@ -1,6 +1,6 @@
-<%= link_to edit_bank_path(bank.id), class: "flex flex-col my-2 rounded-md", data: { turbo_frame: "modal" } do %>
+<%= link_to edit_bank_path(bank.id), class: "flex flex-col my-2 rounded-md bg-withe shadow hover:bg-gray-100", data: { turbo_frame: "modal" } do %>
   <%= image_tag bank.picture.attached? ? bank.picture : "placeholder.webp", class: "w-full h-24 rounded-t-md" %>
-  <div>
+  <div class="px-3 pb-2">
     <div class="flex gap-2 my-1 items-center">
       <%= image_tag bank.icon, class: "w-7 h-7" if bank.icon.attached? %>
       <h4><%= bank.name %></h4>
