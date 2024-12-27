@@ -1,5 +1,5 @@
 <main class="lg:mx-[10%] flex justify-between gap-3">
-  <section class="border-2 border-gray-300 rounded-xl p-3 w-1/5">
+  <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl w-1/5">
     <h3><%= t('.categories') %></h3>
     <%= render partial: "categories/category", collection: @categories %>
     <%= link_to new_category_path, data: { turbo_frame: "modal" } do %>
@@ -9,7 +9,7 @@
     <% end %>
   </section>
 
-  <section class="border-2 border-gray-300 rounded-xl p-3 w-3/5">
+  <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl w-3/5">
     <h3><%= t('.transactions_today') %></h3>
     <div class="overflow-x-auto">
       <table class="min-w-full bg-white shadow-md rounded-lg">
@@ -34,7 +34,7 @@
     <% end %>
   </section>
 
-  <section class="border-2 border-gray-300 rounded-xl p-3 w-1/5">
+  <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl w-1/5">
     <h3><%= t('.banks') %></h3>
     <%= render partial: "banks/bank", collection: @banks %>
     <%= link_to new_bank_path, data: { turbo_frame: "modal" } do %>
