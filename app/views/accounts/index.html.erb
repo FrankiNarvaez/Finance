@@ -17,7 +17,7 @@
       <h3 class="text-xl font-semibold text-gray-800"><%= t('.transactions_today') %></h3>
       <div class="flex gap-2">
         <%= link_to t('.all_transactions'), transactions_path, class: "py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 active:scale-95 transaction-all duration-300 text-center" %>
-        <%= link_to new_category_path, data: { turbo_frame: "modal" } do %>
+        <%= link_to new_transaction_path, data: { turbo_frame: "modal" } do %>
           <div class="bg-main-color text-white rounded-lg flex justify-center py-2 px-3 shadow-sm transaction-all duration-300 active:scale-95">
             <%= image_tag "icons/plus.svg", class: "w-5 h-5" %>
             <p><%= t('.add') %></p>
