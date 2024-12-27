@@ -61,3 +61,11 @@ en:
       title: "Finance"
   common:
     confirmation: "Are you sure?"
+  users:
+    sessions:
+      new:
+        login: "Login"
+        title: "Sign In"
+        forgot_password: "Forgot your password?"
+        no_account: "Don't have account yet?"
+        sign_up: "Sign up here"
