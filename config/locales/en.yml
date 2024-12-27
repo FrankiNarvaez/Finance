@@ -56,6 +56,7 @@ en:
       deleted: "Transaction removed"
     new:
       title: "Add transaction"
+      close: "Close"
   shared:
     header:
       title: "Finance"
