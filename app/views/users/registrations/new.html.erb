@@ -12,10 +12,12 @@
         </div>
 
         <div class="field mt-3">
-          <%= f.label :password, class: "block text-sm mb-2" %>
-          <% if @minimum_password_length %>
-            <em class="text-sm text-gray-400">(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
+          <div class="mb-2">
+            <%= f.label :password, class: "text-sm" %>
+            <% if @minimum_password_length %>
+              <em class="text-sm text-gray-400">(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>
+          </div>
           <%= f.password_field :password, autocomplete: "new-password", class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" %>
         </div>
 
