@@ -13,15 +13,15 @@ en:
       transaction_date: "Date"
   banks:
     create:
-      created: "Your bank %{name} was created"
+      created: "The bank %{name} was created"
     new: 
-      title: "Create a bank"
+      title: "Create bank"
     edit:
       title: "Edit bank"
     update:
-      updated: "Your bank %{name} was updated"
+      updated: "The bank %{name} was updated"
     destroy:
-      deleted: "Your bank was deleted"
+      deleted: "The bank was deleted"
     form:
       edit: "Update"
       delete: "Delete"
@@ -36,11 +36,11 @@ en:
     edit:
       title: "Edit category"
     create:
-      created: "Your category %{name} was created"
+      created: "The category %{name} was created"
     update:
-      updated: "Your category %{name} was updated"
+      updated: "The category %{name} was updated"
     destroy:
-      deleted: "Your category was deleted"
+      deleted: "The category was deleted"
   transactions:
     form:
       income: "Income"
