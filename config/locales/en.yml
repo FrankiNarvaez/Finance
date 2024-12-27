@@ -67,5 +67,11 @@ en:
         login: "Login"
         title: "Sign In"
         forgot_password: "Forgot your password?"
-        no_account: "Don't have account yet?"
+        no_account: "Don't have an account yet?"
         sign_up: "Sign up here"
+    registrations:
+      new:
+        title: "Sign Up"
+        have_account: "Already have an account?"
+        sign_in: "Sign in here"
+        sign_up: "Sign up"
