@@ -50,6 +50,8 @@ en:
       title: "Edit Transaction"
     destroy:
       deleted: "Transaction removed"
+    new:
+      title: "Add transaction"
   shared:
     header:
       title: "Finance"
