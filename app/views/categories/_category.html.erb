@@ -1,4 +1,4 @@
-<%= link_to edit_category_path(category.id), data: { turbo_frame: "modal" }, class: "flex gap-2 bg-white shadow my-1 rounded-lg px-2 py-1 hover:bg-gray-100" do %>
+<%= link_to edit_category_path(category.id), data: { turbo_frame: "modal" }, class: "flex items-center gap-2 bg-white shadow my-1 rounded-lg px-2 py-1 hover:bg-gray-100" do %>
   <%= image_tag category.icon, class: "w-7 h-7" if category.icon.attached? %>
   <%= category.name %>
 <% end %>
