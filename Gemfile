@@ -49,6 +49,12 @@ gem "devise"
 # Styles with tailwind
 gem "tailwindcss-rails", "~> 3.0"
 
+# Group by, to chartick
+gem "groupdate"
+
+# Graphics
+gem "chartkick"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
