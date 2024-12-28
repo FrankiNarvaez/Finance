@@ -8,12 +8,6 @@ export default class extends Controller {
       this.floatTarget.classList.add('scale-100')
     }, 50)
 
-    this.element.addEventListener("turbo:submit-end", (event) => {
-      if (event.detail.success) {
-        Turbo.visit(event.detail.fetchResponse.response.url)
-      }
-    })
-
     const handleTurboResponseDelete = (e) => {
       if (e.detail.fetchResponse.response.statusText === "OK") {
         document.removeEventListener("turbo:before-fetch-response", handleTurboResponseDelete);
