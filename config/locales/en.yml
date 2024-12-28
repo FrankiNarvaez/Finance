@@ -74,6 +74,9 @@ en:
   common:
     confirmation: "Are you sure?"
     back: "Back"
+    exist_relation: "The %{model} %{name} have transactions assosiated"
+    category: "category"
+    bank: "bank"
   users:
     sessions:
       new:

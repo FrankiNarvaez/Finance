@@ -32,8 +32,12 @@ class BanksController < ApplicationController
   end
 
   def destroy
-    @bank.destroy
-    redirect_to root_path, notice: t(".deleted"), status: :see_other
+    if @bank.transactions.exists?
+      redirect_to root_path, alert: t("common.exist_relation", model: t("common.bank"), name: @bank.name)
+    else
+      @bank.destroy
+      redirect_to root_path, notice: t(".deleted"), status: :see_other
+    end
   end
 
   private

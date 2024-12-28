@@ -32,8 +32,12 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category.destroy
-    redirect_to root_path, status: :see_other, notice: t(".deleted")
+    if @category.transactions.exists?
+      redirect_to root_path, alert: t("common.exist_relation", model: t("common.category"), name: @category.name)
+    else
+      @category.destroy
+      redirect_to root_path, status: :see_other, notice: t(".deleted")
+    end
   end
 
   private
