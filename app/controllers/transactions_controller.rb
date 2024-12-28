@@ -2,6 +2,7 @@ class TransactionsController < ApplicationController
   before_action :set_transaction, only: %i[ edit update destroy ]
   def index
     @transactions = Transaction.account(current_user.account.id)
+    @transactions = FindTransactions.new(@transactions).call(filter_params)
   end
 
   def new
@@ -39,6 +40,10 @@ class TransactionsController < ApplicationController
 
   def transaction_params
     params.require(:transaction).permit(:name, :transaction_type, :amount, :description, :date, :bank_id, :category_id)
+  end
+
+  def filter_params
+    params.permit(:transaction_type, :bank, :category, :query_text)
   end
 
   def set_transaction
