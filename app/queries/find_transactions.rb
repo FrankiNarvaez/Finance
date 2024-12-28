@@ -41,6 +41,6 @@ class FindTransactions
   end
 
   def sort(scoped, order_by)
-    scoped.order(order_by)
+    scoped.order(order_by).load_async
   end
 end
