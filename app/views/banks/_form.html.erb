@@ -5,24 +5,24 @@
     </div>
   <% end %>
 
-  <div class="flex flex-col">
-    <%= f.label :name, class: "text-base text-gray-600" %>
-    <%= f.text_field :name, class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
+  <div>
+    <%= f.label :name, class: "block mb-2 text-sm text-gray-700 font-medium" %>
+    <%= f.text_field :name, class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" %>
   </div>
 
-  <div class="flex flex-col">
-    <%= f.label :balance, class: "text-base text-gray-600" %>
-    <%= f.number_field :balance, class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
+  <div>
+    <%= f.label :balance, class: "block mb-2 text-sm text-gray-700 font-medium" %>
+    <%= f.number_field :balance, class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" %>
   </div>
 
-  <div class="flex flex-col">
-    <%= f.label :picture, class: "text-base text-gray-600" %>
-    <%= f.file_field :picture, class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
+  <div>
+    <%= f.label :picture, class: "block mb-2 text-sm text-gray-700 font-medium" %>
+    <%= f.file_field :picture %>
   </div>
 
-  <div class="flex flex-col">
-    <%= f.label :icon, class: "text-base text-gray-600" %>
-    <%= f.file_field :icon, class: "border-2 border-gray-500 focus:border-main-color rounded-md" %>
+  <div>
+    <%= f.label :icon, class: "block mb-2 text-sm text-gray-700 font-medium" %>
+    <%= f.file_field :icon %>
   </div>
 
   <div class="mt-4 w-full flex gap-3">
