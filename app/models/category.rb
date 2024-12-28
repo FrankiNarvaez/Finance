@@ -4,6 +4,4 @@ class Category < ApplicationRecord
   has_one_attached :icon
 
   validates :name, presence: true
-
-  scope :account, ->(id) { where(account_id: id) }
 end

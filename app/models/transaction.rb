@@ -11,6 +11,4 @@ class Transaction < ApplicationRecord
   validates :amount, presence: true
   validates :transaction_type, presence: true
   validates :date, presence: true
-
-  scope :account, ->(id) { where(account_id: id) }
 end
