@@ -4,13 +4,17 @@ en:
       add: "Add"
       banks: "Banks"
       categories: "Categories"
-      transactions_today: "Transactions of today"
+      transactions_today: "Today"
       transaction_name: "Name"
       transaction_description: "Description"
       transaction_amount: "Amount"
       transaction_date: "Date"
       transaction_type: "Type"
       all_transactions: "All transactions"
+      number_categories: "Number of categories"
+      number_banks: "Number of banks"
+      number_transactions_today: "Number of transactions today"
+      total_amount_today: "Total amount of today"
   banks:
     create:
       created: "The bank %{name} was created"
@@ -58,7 +62,6 @@ en:
       title: "Add transaction"
       close: "Close"
     index:
-      transactions_today: "Transactions of today"
       transaction_name: "Name"
       transaction_description: "Description"
       transaction_amount: "Amount"
