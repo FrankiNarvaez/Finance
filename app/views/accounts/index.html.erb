@@ -73,7 +73,7 @@
       <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl h-full max-h-[80vh]">
         <div class="flex justify-between items-center">
           <h3 class="text-xl font-semibold text-gray-800"><%= t('.banks') %></h3>
-          <%= link_to new_category_path, data: { turbo_frame: "modal" } do %>
+          <%= link_to new_bank_path, data: { turbo_frame: "modal" } do %>
             <div class="bg-main-color text-white rounded-lg flex justify-center py-1 px-2 shadow-sm transaction-all duration-300 active:scale-95">
               <%= image_tag "icons/plus.svg", class: "w-5 h-5" %>
               <p><%= t('.add') %></p>
