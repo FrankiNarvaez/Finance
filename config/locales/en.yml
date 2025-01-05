@@ -93,6 +93,12 @@ en:
         have_account: "Already have an account?"
         sign_in: "Sign in here"
         sign_up: "Sign up"
+      edit:
+        title: "Your account"
+        banks_number: "Number of banks"
+        categories_number: "Number of categories"
+        credentials: "Your credentials"
+        cancel_account: "Cancel my account"
     passwords:
       new:
         title: "Forgot your password?"
