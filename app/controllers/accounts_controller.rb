@@ -5,12 +5,12 @@ class AccountsController < ApplicationController
     @categories = Category.with_attached_icon.account(account_id).load_async
     @banks = Bank.with_attached_picture.with_attached_icon.account(account_id).load_async
 
-    @total_amount = 0
+    @total_amount_today = 0
     @transactions.each do |t|
       if t.transaction_type == 0
-        @total_amount += t.amount
+        @total_amount_today += t.amount
       else
-        @total_amount -= t.amount
+        @total_amount_today -= t.amount
       end
     end
   end
