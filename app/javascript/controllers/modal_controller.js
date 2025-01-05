@@ -15,7 +15,7 @@ export default class extends Controller {
     })
 
     const handleTurboResponseDelete = (e) => {
-      if (e.target.attributes.method.nodeValue === "delete" && e.detail.fetchResponse.response.statusText === "OK") {
+      if (e.target.attributes?.method?.nodeValue === "delete" && e.detail.fetchResponse.response.statusText === "OK") {
         document.removeEventListener("turbo:before-fetch-response", handleTurboResponseDelete);
         setTimeout(() => {
           Turbo.visit(e.detail.fetchResponse.response.url)
