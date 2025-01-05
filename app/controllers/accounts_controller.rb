@@ -13,5 +13,10 @@ class AccountsController < ApplicationController
         @total_amount_today -= t.amount
       end
     end
+
+    @total_balance = 0
+    @banks.each do |b|
+      @total_balance += b.balance
+    end
   end
 end

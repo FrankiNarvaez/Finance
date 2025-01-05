@@ -1,7 +1,7 @@
 <main class="sm:mx-[25%] lg:mx-3 xl:mx-[10%]">
-  <section class="flex flex-col lg:flex-row justify-between gap-3 px-2 md:px-0">
+  <section class="flex flex-col lg:flex-row justify-between gap-3 px-2 md:px-0 lg:max-h-[85vh]">
     <section class="w-full lg:w-1/5">
-      <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl h-full max-h-[80vh] overflow-y-auto scroll-bar">
+      <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl h-full overflow-y-auto scroll-bar">
         <div class="flex justify-between items-center mb-2">
           <h3 class="text-xl font-semibold text-gray-800"><%= t('.categories') %></h3>
           <%= link_to new_category_path, data: { turbo_frame: "modal" } do %>
@@ -16,7 +16,7 @@
     </section>
 
     <section class="w-full lg:w-3/5">
-      <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl h-full max-h-[80vh]">
+      <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl h-full">
         <div class="flex justify-between items-center mb-4">
           <div>
             <span class="text-sm text-gray-500"><%= t('.transactions') %></span>
@@ -65,8 +65,8 @@
       </section>
     </section>
 
-    <section class="w-full lg:w-1/5">
-      <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl h-full max-h-[80vh] overflow-y-auto scroll-bar">
+    <section class="w-full lg:w-1/5 flex flex-col gap-2 lg:gap-3">
+      <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl overflow-y-auto scroll-bar">
         <div class="flex justify-between items-center">
           <h3 class="text-xl font-semibold text-gray-800"><%= t('.banks') %></h3>
           <%= link_to new_bank_path, data: { turbo_frame: "modal" } do %>
@@ -77,6 +77,10 @@
           <% end %>
         </div>
         <%= render partial: "banks/bank", collection: @banks %>
+      </section>
+      <section class="p-2 md:p-3 bg-white border shadow-sm rounded-xl">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2"><%= t('.total_balance') %></h3>
+        <p class="text-gray-700 font-medium">$ <%= @total_balance %></p>
       </section>
     </section>
   </section>
