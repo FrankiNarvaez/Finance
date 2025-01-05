@@ -14,7 +14,9 @@ en:
       number_categories: "Number of categories"
       number_banks: "Number of banks"
       number_transactions_today: "Number of transactions today"
-      total_amount_today: "Total amount of today"
+      total_amount_today: "Total amount"
+      transactions_count_today: "Total transactions"
+      no_transactions: "You don't have transactions today"
   banks:
     create:
       created: "The bank %{name} was created"

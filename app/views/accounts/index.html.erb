@@ -32,22 +32,36 @@
             <% end %>
           </div>
         </div>
-        <div class="overflow-y-auto max-h-[65vh] scroll-bar">
-          <table class="min-w-full bg-white shadow-md rounded-lg">
-            <thead class="bg-gray-50 border-b">
-              <tr>
-                <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_name') %></th>
-                <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_description')%></th>
-                <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_amount') %></th>
-                <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_date') %></th>
-                <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_type') %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <%= render partial: "transactions/transaction", collection: @transactions %>
-            </tbody>
-          </table>
-        </div>
+        <% if @transactions.empty? %>
+          <div class="font-medium text-center mt-5">
+            <%= t('.no_transactions') %>
+          </div>
+        <% else %>
+          <div class="overflow-y-auto max-h-[65vh] scroll-bar">
+            <table class="min-w-full bg-white shadow-md rounded-lg">
+              <thead class="bg-gray-50 border-b">
+                <tr>
+                  <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_name') %></th>
+                  <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_description')%></th>
+                  <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_amount') %></th>
+                  <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_date') %></th>
+                  <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_type') %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <%= render partial: "transactions/transaction", collection: @transactions %>
+              </tbody>
+              <tfoot class="bg-gray-50 border-b text-center">
+                <tr>
+                  <th colspan="2" class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.total_amount_today') %></th>
+                  <td><%= @total_amount_today %></td>
+                  <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transactions_count_today') %></th>
+                  <td><%= @transactions.count %></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        <% end %>
       </section>
     </section>
 
