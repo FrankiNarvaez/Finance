@@ -1,7 +1,7 @@
 <section class="lg:px-[10%] h-20 flex items-center justify-between bg-white shadow-sm mb-4">
-  <%= link_to t('.title'), root_path, class: "text-3xl text-main-color font-bold" %>
+  <%= link_to t('.title'), root_path, class: "text-3xl text-main-color font-bold hover:underline" %>
   <div class="flex gap-2">
-    <%= link_to image_tag("icons/profile.svg", class: "w-6 h-6"), edit_user_registration_path, data: { turbo_frame: "modal" } %>
-    <%= link_to t('.logout'), destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: t('common.confirmation') }, class: "font-semibold hover:underline" %>
+    <%= link_to image_tag("icons/profile.svg", class: "w-8 h-8 hover:scale-110 transition-transform"), edit_user_registration_path, data: { turbo_frame: "modal" } %>
+    <%= link_to image_tag("icons/logout.svg", class: "w-8 h-8 hover:scale-110 transition-transform"), destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: t('common.confirmation') }, class: "font-semibold hover:underline" %>
   </div>
 </section>
