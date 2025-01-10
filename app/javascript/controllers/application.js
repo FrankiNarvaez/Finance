@@ -7,7 +7,10 @@ application.debug = false
 window.Stimulus = application
 
 import { Alert } from "tailwindcss-stimulus-components"
+import Swal from "sweetalert2"
 
 application.register('alert', Alert)
+
+window.Swal = Swal
 
 export { application }

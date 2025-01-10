@@ -9,3 +9,4 @@ pin "@hotwired/stimulus", to: "@hotwired--stimulus.js" # @3.2.2
 # Graphics
 pin "chartkick", to: "chartkick.js"
 pin "Chart.bundle", to: "Chart.bundle.js"
+pin "sweetalert2" # @11.15.10
