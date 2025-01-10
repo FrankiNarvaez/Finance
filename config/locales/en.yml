@@ -18,6 +18,8 @@ en:
       transactions_count_today: "Total transactions"
       no_transactions: "You don't have transactions today"
       total_balance: "Total balance"
+      income: "Income"
+      expense: "Expense"
   banks:
     create:
       created: "The bank %{name} was created"
