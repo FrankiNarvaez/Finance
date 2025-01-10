@@ -1,4 +1,4 @@
-<main class="sm:mx-[25%] lg:mx-3 xl:mx-[10%] flex flex-col lg:flex-row justify-between gap-3 px-2 md:px-0">
+ <main class="sm:mx-[25%] lg:mx-3 xl:mx-[10%] flex flex-col lg:flex-row justify-between gap-3 px-2 md:px-0">
   <section class="w-full lg:w-1/5">
     <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl overflow-y-auto scroll-bar">
       <div class="flex justify-between items-center mb-2">
@@ -68,17 +68,30 @@
   </section>
 
   <section class="w-full lg:w-1/5 flex flex-col gap-2 lg:gap-3">
-    <section class="p-2 md:p-3 bg-white border shadow-sm rounded-xl">
-      <h3 class="text-xl font-semibold text-gray-800 mb-2"><%= t('.total_income') %></h3>
-      <p class="text-gray-700 font-medium">$ <%= @total_income %></p>
+    <section class="p-2 md:p-3 bg-white border shadow-sm rounded-xl flex gap-2">
+      <span class="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full dark:bg-teal-500/10 dark:text-teal-500">
+        <svg class="size-2.5" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </svg>
+        <%= t('.income') %>
+      </span>
+      <p class="text-gray-700 font-medium">$<%= @total_income %></p>
     </section>
-    <section class="p-2 md:p-3 bg-white border shadow-sm rounded-xl">
-      <h3 class="text-xl font-semibold text-gray-800 mb-2"><%= t('.total_expense') %></h3>
-      <p class="text-gray-700 font-medium">$ <%= @total_expense %></p>
+    <section class="p-2 md:p-3 bg-white border shadow-sm rounded-xl flex gap-2">
+      <span class="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium bg-red-100 text-red-800 rounded-full dark:bg-red-500/10 dark:text-red-500">
+        <svg class="size-2.5" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </svg>
+        <%= t('.expense') %>
+      </span>
+      <p class="text-gray-700 font-medium">$<%= @total_expense %></p>
     </section>
-    <section class="p-2 md:p-3 bg-white border shadow-sm rounded-xl">
-      <h3 class="text-xl font-semibold text-gray-800 mb-2"><%= t('.total_balance') %></h3>
-      <p class="text-gray-700 font-medium">$ <%= @total_balance %></p>
+    <section class="p-2 md:p-3 bg-white border shadow-sm rounded-xl flex gap-2">
+      <span class="py-1 px-1.5 inline-flex items-center text-xs font-medium bg-sky-100 text-sky-800 rounded-full">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 56 56"><path fill="currentColor" fill-rule="evenodd" d="M29 30v10c3.519-.316 5-2.287 5-4.89c0-2.507-1.152-3.99-5-5.11m-3-5v-9c-3.273.415-5 2.33-5 4.43s1.364 3.647 5 4.57m2.84.737l1.072.277C35.784 27.423 39 29.917 39 34.836c0 5.658-4.466 8.868-10.16 9.284V48h-2.523v-3.88c-5.672-.439-10.16-3.741-10.317-9.284h4.622c.402 2.702 2.1 4.688 5.695 5.08V29.849l-.916-.231c-5.672-1.363-8.731-3.996-8.731-8.684c0-5.173 4.02-8.591 9.647-9.03V8h2.523v3.903c5.582.462 9.624 3.926 9.803 9.169h-4.645c-.29-2.91-2.3-4.596-5.158-4.966z"/></svg>
+        <%= t('.total_balance') %>
+      </span>
+      <p class="text-gray-700 font-medium">$<%= @total_balance %></p>
     </section>
 
     <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl overflow-y-auto scroll-bar">
