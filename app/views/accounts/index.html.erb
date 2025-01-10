@@ -1,94 +1,97 @@
-<main class="sm:mx-[25%] lg:mx-3 xl:mx-[10%]">
-  <section class="flex flex-col lg:flex-row justify-between gap-3 px-2 md:px-0 lg:max-h-[85vh]">
-    <section class="w-full lg:w-1/5">
-      <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl h-full overflow-y-auto scroll-bar">
-        <div class="flex justify-between items-center mb-2">
-          <h3 class="text-xl font-semibold text-gray-800"><%= t('.categories') %></h3>
-          <%= link_to new_category_path, data: { turbo_frame: "modal" } do %>
-            <div class="bg-main-color text-white rounded-lg flex justify-center py-1 px-2 shadow-sm transaction-all duration-300 active:scale-95">
-              <%= image_tag "icons/plus.svg", class: "w-5 h-5" %>
-              <p><%= t('.add') %></p>
-            </div>
-          <% end %>
-        </div>
-        <%= render partial: "categories/category", collection: @categories %>
-      </section>
-    </section>
-
-    <section class="w-full lg:w-3/5">
-      <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl h-full">
-        <div class="flex justify-between items-center mb-4">
-          <div>
-            <span class="text-sm text-gray-500"><%= t('.transactions') %></span>
-            <h3 class="text-xl font-semibold text-gray-800"><%= t('.transactions_today') %></h3>
-          </div>
-          <div class="flex gap-2">
-            <%= link_to t('.all_transactions'), transactions_path, class: "py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 active:scale-95 transaction-all duration-300 text-center" %>
-            <%= link_to new_transaction_path, data: { turbo_frame: "modal" } do %>
-              <div class="bg-main-color text-white rounded-lg flex justify-center py-2 px-3 shadow-sm transaction-all duration-300 active:scale-95">
-                <%= image_tag "icons/plus.svg", class: "w-5 h-5" %>
-                <p><%= t('.add') %></p>
-              </div>
-            <% end %>
-          </div>
-        </div>
-        <% if @transactions.empty? %>
-          <div class="font-medium text-center mt-5">
-            <%= t('.no_transactions') %>
-          </div>
-        <% else %>
-          <div class="overflow-y-auto max-h-[65vh] scroll-bar">
-            <table class="min-w-full bg-white shadow-md rounded-lg">
-              <thead class="bg-gray-50 border-b">
-                <tr>
-                  <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_name') %></th>
-                  <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_description')%></th>
-                  <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_amount') %></th>
-                  <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_date') %></th>
-                  <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_type') %></th>
-                </tr>
-              </thead>
-              <tbody>
-                <%= render partial: "transactions/transaction", collection: @transactions %>
-              </tbody>
-              <tfoot class="bg-gray-50 border-b text-center">
-                <tr>
-                  <th colspan="2" class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.total_amount_today') %></th>
-                  <td><%= @total_amount_today %></td>
-                  <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transactions_count_today') %></th>
-                  <td><%= @transactions.count %></td>
-                </tr>
-              </tfoot>
-            </table>
+<main class="sm:mx-[25%] lg:mx-3 xl:mx-[10%] flex flex-col lg:flex-row justify-between gap-3 px-2 md:px-0">
+  <section class="w-full lg:w-1/5">
+    <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl overflow-y-auto scroll-bar">
+      <div class="flex justify-between items-center mb-2">
+        <h3 class="text-xl font-semibold text-gray-800"><%= t('.categories') %></h3>
+        <%= link_to new_category_path, data: { turbo_frame: "modal" } do %>
+          <div class="bg-main-color text-white rounded-lg flex justify-center py-1 px-2 shadow-sm transaction-all duration-300 active:scale-95">
+            <%= image_tag "icons/plus.svg", class: "w-5 h-5" %>
+            <p><%= t('.add') %></p>
           </div>
         <% end %>
-      </section>
+      </div>
+      <%= render partial: "categories/category", collection: @categories %>
     </section>
+  </section>
 
-    <section class="w-full lg:w-1/5 flex flex-col gap-2 lg:gap-3">
-      <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl overflow-y-auto scroll-bar">
-        <div class="flex justify-between items-center">
-          <h3 class="text-xl font-semibold text-gray-800"><%= t('.banks') %></h3>
-          <%= link_to new_bank_path, data: { turbo_frame: "modal" } do %>
-            <div class="bg-main-color text-white rounded-lg flex justify-center py-1 px-2 shadow-sm transaction-all duration-300 active:scale-95">
+  <section class="w-full lg:w-3/5">
+    <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl">
+      <div class="flex justify-between items-center mb-4">
+        <div>
+          <span class="text-sm text-gray-500"><%= t('.transactions') %></span>
+          <h3 class="text-xl font-semibold text-gray-800"><%= t('.transactions_today') %></h3>
+        </div>
+        <div class="flex gap-2">
+          <%= link_to t('.all_transactions'), transactions_path, class: "py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 active:scale-95 transaction-all duration-300 text-center" %>
+          <%= link_to new_transaction_path, data: { turbo_frame: "modal" } do %>
+            <div class="bg-main-color text-white rounded-lg flex justify-center py-2 px-3 shadow-sm transaction-all duration-300 active:scale-95">
               <%= image_tag "icons/plus.svg", class: "w-5 h-5" %>
               <p><%= t('.add') %></p>
             </div>
           <% end %>
         </div>
-        <%= render partial: "banks/bank", collection: @banks %>
-      </section>
-      <section class="p-2 md:p-3 bg-white border shadow-sm rounded-xl">
-        <h3 class="text-xl font-semibold text-gray-800 mb-2"><%= t('.total_balance') %></h3>
-        <p class="text-gray-700 font-medium">$ <%= @total_balance %></p>
-      </section>
+      </div>
+      <% if @today_transactions.empty? %>
+        <div class="font-medium text-center mt-5">
+          <%= t('.no_transactions') %>
+        </div>
+      <% else %>
+        <div class="overflow-y-auto max-h-[65vh] scroll-bar">
+          <table class="min-w-full bg-white shadow-md rounded-lg">
+            <thead class="bg-gray-50 border-b">
+              <tr>
+                <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_name') %></th>
+                <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_description')%></th>
+                <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_amount') %></th>
+                <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_date') %></th>
+                <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transaction_type') %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render partial: "transactions/transaction", collection: @transactions %>
+            </tbody>
+            <tfoot class="bg-gray-50 border-b text-center">
+              <tr>
+                <th colspan="2" class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.total_amount_today') %></th>
+                <td><%= @total_amount_today %></td>
+                <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transactions_count_today') %></th>
+                <td><%= @transactions.count %></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      <% end %>
     </section>
-  </section>
-  <section class="grid lg:grid-cols-2 md:gap-3 mt-5 px-2 md:px-0">
-    <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl w-full h-full">
+    <section class="p-4 md:p-5 mt-4 bg-white border shadow-sm rounded-xl w-full">
       <%= line_chart Transaction.group_by_day(:date).count %>
     </section>
-    <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl w-full h-full">
+  </section>
+
+  <section class="w-full lg:w-1/5 flex flex-col gap-2 lg:gap-3">
+    <section class="p-2 md:p-3 bg-white border shadow-sm rounded-xl">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2"><%= t('.total_income') %></h3>
+      <p class="text-gray-700 font-medium">$ <%= @total_income %></p>
+    </section>
+    <section class="p-2 md:p-3 bg-white border shadow-sm rounded-xl">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2"><%= t('.total_expense') %></h3>
+      <p class="text-gray-700 font-medium">$ <%= @total_expense %></p>
+    </section>
+    <section class="p-2 md:p-3 bg-white border shadow-sm rounded-xl">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2"><%= t('.total_balance') %></h3>
+      <p class="text-gray-700 font-medium">$ <%= @total_balance %></p>
+    </section>
+
+    <section class="p-4 md:p-5 bg-white border shadow-sm rounded-xl overflow-y-auto scroll-bar">
+      <div class="flex justify-between items-center">
+        <h3 class="text-xl font-semibold text-gray-800"><%= t('.banks') %></h3>
+        <%= link_to new_bank_path, data: { turbo_frame: "modal" } do %>
+          <div class="bg-main-color text-white rounded-lg flex justify-center py-1 px-2 shadow-sm transaction-all duration-300 active:scale-95">
+            <%= image_tag "icons/plus.svg", class: "w-5 h-5" %>
+            <p><%= t('.add') %></p>
+          </div>
+        <% end %>
+      </div>
+      <%= render partial: "banks/bank", collection: @banks %>
     </section>
   </section>
 </main>
