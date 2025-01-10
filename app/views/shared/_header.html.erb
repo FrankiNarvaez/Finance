@@ -1,33 +1,7 @@
 <section class="lg:px-[10%] h-20 flex items-center justify-between bg-white shadow-sm mb-4">
   <%= link_to t('.title'), root_path, class: "text-3xl text-main-color font-bold hover:underline" %>
-  <div class="flex gap-2">
+  <div class="flex gap-2" data-controller="sweetalert">
     <%= link_to image_tag("icons/profile.svg", class: "w-8 h-8 hover:scale-110 transition-transform"), edit_user_registration_path, data: { turbo_frame: "modal" } %>
-    <button onclick= "sweetAlertBtn()"><%= image_tag("icons/logout.svg", class: "w-8 h-8 hover:scale-110 transition-transform") %></button>
+    <a data-action="click->sweetalert#logout"><%= image_tag("icons/logout.svg", class: "w-8 h-8 hover:scale-110 transition-transform") %></a>
   </div>
 </section>
-
-<script>
-  function sweetAlertBtn() {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#ccc",
-      confirmButtonText: "Accept"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        (async () => {
-          await fetch('/users/sign_out', {
-            method: 'DELETE',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content') // Token CSRF
-            }
-          }).then(() => window.location.href = '/users/sign_in')
-        })()
-      }
-    });
-  }
-</script>
