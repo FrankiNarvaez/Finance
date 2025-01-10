@@ -47,7 +47,7 @@ gem "dotenv-rails"
 gem "devise"
 
 # Styles with tailwind
-gem "tailwindcss-rails", "~> 3.0"
+gem "tailwindcss-rails", "~> 3.2"
 
 # Group by, to chartick
 gem "groupdate"
