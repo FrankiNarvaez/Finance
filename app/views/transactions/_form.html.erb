@@ -46,8 +46,10 @@
     </div>
   </div>
 
-  <div class="w-full flex gap-3">
+  <div class="w-full flex gap-3" data-controller="sweetalert">
     <%= f.submit class: "bg-main-color text-white rounded p-2 w-full" %>
-    <%= link_to t('.delete'), transaction_path(@transaction.id), data: { turbo_method: :delete, turbo_confirm: t('common.confirmation') }, class: "bg-main-color text-white rounded p-2 w-full text-center" if action_name == 'edit' %>
+    <% if action_name == 'edit' %>
+      <a data-action="click->sweetalert#delete" data-parameters='{"id": <%= @transaction.id %>, "model": "transactions"}' class="bg-main-color text-white rounded p-2 w-full text-center"><%= t('.delete') %></a>
+    <% end %>
   </div>
 <% end %>
