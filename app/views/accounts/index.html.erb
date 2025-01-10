@@ -48,14 +48,14 @@
               </tr>
             </thead>
             <tbody>
-              <%= render partial: "transactions/transaction", collection: @transactions %>
+              <%= render partial: "transactions/transaction", collection: @today_transactions %>
             </tbody>
             <tfoot class="bg-gray-50 border-b text-center">
               <tr>
                 <th colspan="2" class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.total_amount_today') %></th>
                 <td><%= @total_amount_today %></td>
                 <th class="px-6 py-3 text-left text-sm font-medium text-gray-700"><%= t('.transactions_count_today') %></th>
-                <td><%= @transactions.count %></td>
+                <td><%= @today_transactions.count %></td>
               </tr>
             </tfoot>
           </table>
