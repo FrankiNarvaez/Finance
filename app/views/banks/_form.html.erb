@@ -17,12 +17,22 @@
 
   <div>
     <%= f.label :picture, class: "block mb-2 text-sm text-gray-700 font-medium" %>
-    <%= f.file_field :picture %>
+    <%= f.label :picture, class: "block font-medium cursor-pointer min-w-72 py-2 text-center text-gray-700 border-2 border-[#cacaca] border-dashed rounded-lg hover:bg-gray-50" do %>
+      <span class="bank_picture">
+        <%= t('.select_picture') %>
+      </span>
+    <% end %>
+    <%= f.file_field :picture, class: "w-[0.1px] h-[0.1px] absolute -z-10 inputfile" %>
   </div>
 
   <div>
     <%= f.label :icon, class: "block mb-2 text-sm text-gray-700 font-medium" %>
-    <%= f.file_field :icon %>
+    <%= f.label :icon, class: "block font-medium cursor-pointer min-w-72 py-2 text-center text-gray-700 border-2 border-[#cacaca] border-dashed rounded-lg hover:bg-gray-50" do %>
+      <span class="bank_icon">
+        <%= t('.select_icon') %>
+      </span>
+    <% end %>
+    <%= f.file_field :icon, class: "w-[0.1px] h-[0.1px] absolute -z-10 inputfile" %>
   </div>
 
   <div class="mt-4 w-full flex gap-3" data-controller="sweetalert">
@@ -32,3 +42,14 @@
     <% end %>
   </div>
 <% end %>
+
+<script>
+  const $inputs = document.querySelectorAll('.inputfile')
+  
+  $inputs.forEach((input) => {
+    input.addEventListener('change', (e) => {
+      const $label = document.querySelector(`.${input.id}`)
+      $label.innerText = e.target.files[0].name
+    })
+  })
+</script>
