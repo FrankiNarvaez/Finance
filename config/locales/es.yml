@@ -1,0 +1,110 @@
+es:
+  accounts:
+    index:
+      add: "Añadir"
+      banks: "Bancos"
+      categories: "Categorías"
+      transactions_today: "Hoy"
+      transaction_name: "Nombre"
+      transaction_description: "Descripción"
+      transaction_amount: "Monto"
+      transaction_date: "Fecha"
+      transaction_type: "Tipo"
+      all_transactions: "Todas las transacciones"
+      number_categories: "Número de categorías"
+      number_banks: "Número de bancos"
+      number_transactions_today: "Número de transacciones hoy"
+      total_amount_today: "Monto total"
+      transactions_count_today: "Total de transacciones"
+      no_transactions: "No tienes transacciones hoy"
+      total_balance: "Balance total"
+      income: "Ingreso"
+      expense: "Gasto"
+  banks:
+    create:
+      created: "El banco %{name} fue creado"
+    new: 
+      title: "Crear banco"
+    edit:
+      title: "Editar banco"
+    update:
+      updated: "El banco %{name} fue actualizado"
+    destroy:
+      deleted: "El banco fue eliminado"
+    form:
+      edit: "Actualizar"
+      delete: "Eliminar"
+    bank:
+      balance: "Balance"
+  categories:
+    form:
+      edit: "Actualizar"
+      delete: "Eliminar"
+    new:
+      title: "Crear categoría"
+    edit:
+      title: "Editar categoría"
+    create:
+      created: "La categoría %{name} fue creada"
+    update:
+      updated: "La categoría %{name} fue actualizada"
+    destroy:
+      deleted: "La categoría fue eliminada"
+  transactions:
+    form:
+      income: "Ingreso"
+      expense: "Gasto"
+      delete: "Eliminar"
+    create:
+      created: "Transacción guardada"
+    update:
+      updated: "Transacción actualizada"
+    edit:
+      title: "Editar transacción"
+    destroy:
+      deleted: "Transacción eliminada"
+    new:
+      title: "Añadir transacción"
+      close: "Cerrar"
+    index:
+      transaction_name: "Nombre"
+      transaction_description: "Descripción"
+      transaction_amount: "Monto"
+      transaction_date: "Fecha"
+      transaction_type: "Tipo"
+      all_transactions: "Todas las transacciones"
+  shared:
+    header:
+      title: "Finanzas"
+  common:
+    confirmation: "¿Estás seguro?"
+    back: "Atrás"
+    exist_relation: "El/la %{model} %{name} tiene transacciones asociadas"
+    category: "categoría"
+    bank: "banco"
+  users:
+    sessions:
+      new:
+        login: "Iniciar sesión"
+        title: "Iniciar sesión"
+        forgot_password: "¿Olvidaste tu contraseña?"
+        no_account: "¿Aún no tienes una cuenta?"
+        sign_up: "Regístrate aquí"
+    registrations:
+      new:
+        title: "Registrarse"
+        have_account: "¿Ya tienes una cuenta?"
+        sign_in: "Inicia sesión aquí"
+        sign_up: "Registrarse"
+      edit:
+        title: "Tu cuenta"
+        banks_number: "Número de bancos"
+        categories_number: "Número de categorías"
+        credentials: "Tus credenciales"
+        cancel_account: "Cancelar mi cuenta"
+    passwords:
+      new:
+        title: "¿Olvidaste tu contraseña?"
+        send_instructions: "Envíame las instrucciones para restablecer la contraseña"
+        remmember_password: "¿Recordaste tu contraseña?"
+        sign_in: "Inicia sesión aquí"
