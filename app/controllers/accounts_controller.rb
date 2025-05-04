@@ -32,4 +32,14 @@ class AccountsController < ApplicationController
       end
     end
   end
+
+  def group
+    @accounts = Account.where(parent_id: current_user.id)
+  end
+
+  def add_user_to_group
+  end
+
+  def remove_user_from_group
+  end
 end

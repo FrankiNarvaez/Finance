@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   resources :banks, except: :show
   resources :categories, except: :show
   resources :transactions, except: :show
+
+  get "group" => "accounts#group"
 end

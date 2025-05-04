@@ -1,6 +1,7 @@
 <section class="lg:px-[10%] h-20 flex items-center justify-between bg-white shadow-sm mb-4">
   <%= link_to t('.title'), root_path, class: "text-3xl text-main-color font-bold hover:underline" %>
   <div class="flex gap-2" data-controller="sweetalert">
+    <%= link_to "Familiar group", group_path %>
     <%= link_to image_tag("icons/profile.svg", class: "w-8 h-8 hover:scale-110 transition-transform"), edit_user_registration_path, data: { turbo_frame: "modal" } %>
     <a data-action="click->sweetalert#logout"><%= image_tag("icons/logout.svg", class: "w-8 h-8 hover:scale-110 transition-transform") %></a>
   </div>
