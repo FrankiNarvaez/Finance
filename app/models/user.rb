@@ -5,6 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   has_one :account, dependent: :destroy
+  has_many :child_accounts, class_name: "Account", foreign_key: :parent_id
 
   def create_account
     Account.create(user_id: id) unless Account.find_by(user_id: id)

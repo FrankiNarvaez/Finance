@@ -2,6 +2,7 @@ class Account < ApplicationRecord
   after_save :create_bank
 
   belongs_to :user
+  belongs_to :parent, class_name: "User", optional: true
   has_many :banks, dependent: :destroy
   has_many :categories, dependent: :destroy
   has_many :transactions, dependent: :destroy
