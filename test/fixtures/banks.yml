@@ -1,11 +1,15 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+# test/fixtures/banks.yml
 one:
-  name: MyString
-  balance: 1
+  name: Bank One
+  balance: 1000
   account: one
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
 
 two:
-  name: MyString
-  balance: 1
+  name: Bank Two
+  balance: 2000
   account: two
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+

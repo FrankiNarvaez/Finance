@@ -1,21 +1,61 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+# test/fixtures/transactions.yml
 one:
-  name: MyString
-  type: 1
-  amount: 1
-  description: MyText
+  name: Transaction One
+  transaction_type: 1
+  amount: 100
+  description: Description for transaction one
   date: 2024-12-25
   account: one
   bank: one
   category: one
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
 
 two:
-  name: MyString
-  type: 1
-  amount: 1
-  description: MyText
+  name: Transaction Two
+  transaction_type: 1
+  amount: 200
+  description: Description for transaction two
   date: 2024-12-25
   account: two
   bank: two
   category: two
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+three:
+  name: Transaction Three
+  transaction_type: 2
+  amount: 300
+  description: Another transaction example
+  date: 2025-01-15
+  account: one
+  bank: one
+  category: one
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+four:
+  name: Transaction Four
+  transaction_type: 2
+  amount: 400
+  description: Sample description for transaction four
+  date: 2025-02-10
+  account: two
+  bank: two
+  category: two
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+five:
+  name: Transaction Five
+  transaction_type: 1
+  amount: 150
+  description: Fifth transaction sample
+  date: 2025-03-05
+  account: one
+  bank: one
+  category: one
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
